@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person Faces</title>
+
+    <!-- custom style css link  -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- font link  -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" type="text/css">
+
+    <!-- lightgallery link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
+
+    <!-- fontawesome link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+</head>
+<body>
+
+    <div id="side-menu" class="fas fa-bars"></div>
+
+    <div class="side-bar">
+        
+        <div class="box">
+            <h4>Category:</h4>
+            <div class="category">
+                <div class="btn active" data-category="all"> all </div>
+                <div class="btn" data-category="men"> men </div>
+                <div class="btn" data-category="women"> women </div>
+            </div>
+        </div>
+    </div>
+
+    <h1 class="title">Person`s Faces</h1>
+
+    <section class="gallery">
+
+        <a href="img/person_face_1.png" class="image men"><img src="img/person_face_1.png" ></a>
+        <a href="img/person_face_2.png" class="image men"><img src="img/person_face_2.png"></a>
+        <a href="img/person_face_3.png" class="image women"><img src="img/person_face_3.png"></a>
+        <a href="img/person_face_4.png" class="image men"><img src="img/person_face_4.png"></a>
+        <a href="img/person_face_5.png" class="image women"><img src="img/person_face_5.png"></a>
+        <a href="img/person_face_6.png" class="image men"><img src="img/person_face_6.png"></a>
+        <a href="img/person_face_7.png" class="image women"><img src="img/person_face_7.png"></a>
+        <a href="img/person_face_8.png" class="image women"><img src="img/person_face_8.png"></a>
+        <a href="img/person_face_9.png" class="image women"><img src="img/person_face_9.png"></a>
+        <a href="img/person_face_10.png" class="image men"><img src="img/person_face_10.png"></a>
+        <a href="img/person_face_11.png" class="image men"><img src="img/person_face_11.png"></a>
+        <a href="img/person_face_12.png" class="image women"><img src="img/person_face_12.png"></a>
+        <a href="img/person_face_13.png" class="image men"><img src="img/person_face_13.png"></a>
+        <a href="img/person_face_14.png" class="image women"><img src="img/person_face_14.png"></a>
+        <a href="img/person_face_15.png" class="image men"><img src="img/person_face_15.png"></a>
+        <a href="img/person_face_16.png" class="image men"><img src="img/person_face_16.png"></a>
+        <a href="img/person_face_17.png" class="image women"><img src="img/person_face_17.png"></a>
+        <a href="img/person_face_18.png" class="image women"><img src="img/person_face_18.png"></a>
+        <a href="img/person_face_19.png" class="image men"><img src="img/person_face_19.png"></a>
+        <a href="img/person_face_20.png" class="image men"><img src="img/person_face_20.png"></a>
+        <a href="img/person_face_21.png" class="image men"><img src="img/person_face_21.png"></a>
+        <a href="img/person_face_22.png" class="image women"><img src="img/person_face_22.png"></a>
+        <a href="img/person_face_23.png" class="image women"><img src="img/person_face_23.png"></a>
+        <a href="img/person_face_24.png" class="image women"><img src="img/person_face_24.png"></a>
+
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js"></script>
+
+    <script>
+
+        lightGallery(document.querySelector('.gallery'), {
+            controls: false,
+            keyPress: false,
+            counter: false,
+            enableDrag: false
+        });
+
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+
+        $(document).ready(function(){
+
+            $('.btn').click(function() {
+
+                $(this).addClass('active').siblings().removeClass('active');
+
+                let filter = $(this).attr('data-category')
+
+                if(filter == 'all'){
+                    $('.image').show(400);
+                }else{
+                    $('.image').not('.'+filter).hide(200);
+                    $('.image').filter('.'+filter).show(400);
+                }
+
+            });
+
+        });
+
+    </script>
+
+    <script src="main.js"></script>
+    
+</body>
+</html>
